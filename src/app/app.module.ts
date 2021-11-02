@@ -10,11 +10,19 @@ import { CourseCatalogComponent } from './components/course-catalog/course-catal
 import { reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './effects/app.effects';
+import { CoursesEffects } from './effects/courses.effects';
+import { HomeComponent } from './components/home/home.component';
+import { NavComponent } from './components/nav/nav.component';
+import { CourseEditComponent } from './components/course-edit/course-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseCatalogComponent
+    CourseCatalogComponent,
+    HomeComponent,
+    NavComponent,
+    CourseEditComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +30,8 @@ import { AppEffects } from './effects/app.effects';
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
     HttpClientModule,
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([AppEffects, CoursesEffects]),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

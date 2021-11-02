@@ -9,17 +9,12 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class AppEffects {
 
-
-
-  // applicationStarted -> loadTheCourses
+  //applicationStarted -> loadTheCourses
   loadTheCourses$ = createEffect(() =>
     this.actions$.pipe(
       ofType(appActions.applicationStarted),
       map(() => courseActions.LoadCourses())
     )
-
-
-
   );
 
 

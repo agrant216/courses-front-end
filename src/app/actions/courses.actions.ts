@@ -14,3 +14,13 @@ export const LoadCoursesFailed = createAction(
   '[courses] loading the courses failed',
   props<{ payload: string }>()
 );
+
+export const selectedCourseSet = createAction(
+  '[courses] selected course set',
+  props<{ payload: CourseEntity }>()
+);
+
+export const courseDayCountAdjusted = createAction(
+  '[courses] course day count adjusted',
+  props<{ course: CourseEntity, newNumberOfPages: number }>()
+);
